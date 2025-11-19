@@ -98,6 +98,9 @@
         <label for="name">Vor- und Nachname *</label>
         <input type="text" id="name" name="Vor- und Nachname" required>
 
+        <label for="ign">Minecraft Ingame Name *</label>
+        <input type="text" id="ign" name="Minecraft Ingame Name" required>
+
         <label for="age">Alter *</label>
         <input type="number" id="age" name="Alter" required min="1">
 
@@ -134,11 +137,10 @@
     const overlay = document.getElementById("overlay");
 
     form.addEventListener("submit", async function(event) {
-        event.preventDefault(); // verhindert Seite-Neuladen
+        event.preventDefault(); 
 
         const formData = new FormData(form);
 
-        // An Formspree senden
         const response = await fetch(form.action, {
             method: "POST",
             body: formData,
